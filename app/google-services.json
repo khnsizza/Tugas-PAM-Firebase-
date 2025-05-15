@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "913259817986",
+    "firebase_url": "https://project-pam-8619d-default-rtdb.firebaseio.com",
+    "project_id": "project-pam-8619d",
+    "storage_bucket": "project-pam-8619d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913259817986:android:6cc28fcc5c49f2850b8b1b",
+        "android_client_info": {
+          "package_name": "com.example.pam6"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913259817986-dtfucifsqplihb9sa11qn0tugm287r3b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pam6",
+            "certificate_hash": "f31924814996180b1173042fc15263aea6d90657"
+          }
+        },
+        {
+          "client_id": "913259817986-2ilgufvgms2odfirkogv4ct1elnkt8va.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARiO6dnv6jdXB7KynUiMy6uG-j9m7bo5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913259817986-2ilgufvgms2odfirkogv4ct1elnkt8va.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

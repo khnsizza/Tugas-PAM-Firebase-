@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New Contact"
+        android:textColor="#FFC0CB"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@android:drawable/ic_menu_revert"
+        android:contentDescription="Back"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"/>
+
+    <!-- Email akun -->
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="khnsizza@gmail.com ▼"
+        android:textColor="#FFC0CB"
+        android:textSize="16sp"
+        android:drawableLeft="@android:drawable/sym_def_app_icon"
+        android:drawablePadding="8dp"
+        android:paddingBottom="16dp"
+        android:layout_marginTop="50dp"/>
+
+
+    <!-- Foto profil -->
+    <ImageView
+        android:id="@+id/profile_photo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@android:drawable/ic_menu_camera"
+        android:layout_gravity="center"
+        android:backgroundTint="#7DA6FF"
+        android:scaleType="center"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_circle" />
+
+    <!-- Nama untuk detail view -->
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nama"
+        android:textColor="#FFC0CB"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"/>
+
+    <!-- Form fields -->
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama"
+        android:drawableLeft="@android:drawable/ic_menu_myplaces"
+        android:drawablePadding="12dp"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#000000"
+        android:padding="12dp"
+        android:background="@drawable/bg_retangle"/>
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Telepon"
+        android:drawableLeft="@android:drawable/ic_menu_call"
+        android:drawablePadding="12dp"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#000000"
+        android:padding="12dp"
+        android:background="@drawable/bg_retangle"
+        android:layout_marginTop="12dp"/>
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:drawableLeft="@android:drawable/ic_dialog_email"
+        android:drawablePadding="12dp"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#000000"
+        android:padding="12dp"
+        android:background="@drawable/bg_retangle"
+        android:layout_marginTop="12dp"/>
+
+    <EditText
+        android:id="@+id/et_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kelompok"
+        android:drawableLeft="@android:drawable/ic_menu_agenda"
+        android:drawablePadding="12dp"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#000000"
+        android:padding="12dp"
+        android:background="@drawable/bg_retangle"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/tv_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="▼ Lihat lainnya"
+        android:textColor="#FFC0CB"
+        android:textSize="14sp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="start"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Batal"
+            android:textColor="#FFC0CB"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Simpan"
+            android:textColor="#FFC0CB"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textColor="#FFC0CB"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"/>
+
+</LinearLayout>
