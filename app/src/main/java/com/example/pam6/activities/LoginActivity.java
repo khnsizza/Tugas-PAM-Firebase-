@@ -96,17 +96,14 @@ public class LoginActivity extends AppCompatActivity {
 
         // Forgot password
         tvForgotPassword.setOnClickListener(v -> {
-            // You can implement password reset functionality here
             Toast.makeText(this, "Forgot password clicked", Toast.LENGTH_SHORT).show();
         });
 
         // Terms & Conditions
         tvTerms.setOnClickListener(v -> {
-            // You can implement terms & conditions display here
             Toast.makeText(this, "Terms & Conditions clicked", Toast.LENGTH_SHORT).show();
         });
 
-        // PERBAIKAN: Cek auto-login setelah UI sudah di-render
         if (autoLoginEnabled) {
             checkAutoLogin();
         } else {
@@ -114,10 +111,8 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    // PERBAIKAN: Pindahkan logika auto-login ke method terpisah
     private void checkAutoLogin() {
-        // Check if user is already logged in and auto-login is enabled
-        // Try silent sign-in with Google
+
         GoogleSignInAccount lastAccount = GoogleSignIn.getLastSignedInAccount(this);
         if (lastAccount != null) {
             Log.d(TAG, "Auto-login with Google account: " + lastAccount.getEmail());
@@ -137,13 +132,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        // PERBAIKAN: Hapus auto-login otomatis di onStart()
-        // Ini menghindari login otomatis saat kembali ke Activity ini
+
     }
 
-    // PERBAIKAN: Method untuk logout manual saat debugging
+
     public void logoutForDebugging() {
-        // Sign out from Firebase
+
         FirebaseAuth.getInstance().signOut();
 
         // Sign out from Google
@@ -189,8 +183,6 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        // Show loading progress if needed
-        // showProgressDialog();
 
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
@@ -224,13 +216,11 @@ public class LoginActivity extends AppCompatActivity {
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
 
-        // Show loading progress if needed
-        // showProgressDialog();
 
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, task -> {
-                    // hideProgressDialog();
+
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d(TAG, "signInWithCredential:success");
@@ -244,7 +234,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         goToMain();
                     } else {
-                        // If sign in fails, display a message to the user
+
                         Log.w(TAG, "signInWithCredential:failure", task.getException());
                         Toast.makeText(LoginActivity.this, "Authentication failed: " +
                                         (task.getException() != null ? task.getException().getMessage() : "Unknown error"),
