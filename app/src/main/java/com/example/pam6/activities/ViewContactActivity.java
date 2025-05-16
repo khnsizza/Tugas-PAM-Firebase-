@@ -77,7 +77,6 @@ public class ViewContactActivity extends AppCompatActivity implements FirebaseDa
             return;
         }
 
-        // Load data kontak
         refreshContactData();
 
         btnCall.setOnClickListener(v -> Toast.makeText(this, "Call button clicked", Toast.LENGTH_SHORT).show());

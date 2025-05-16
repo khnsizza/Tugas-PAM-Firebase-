@@ -43,7 +43,6 @@ public class LoginActivity extends AppCompatActivity {
                 if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                     Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
                     try {
-                        // Google Sign In was successful, authenticate with Firebase
                         GoogleSignInAccount account = task.getResult(ApiException.class);
                         Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
                         firebaseAuthWithGoogle(account);
@@ -191,7 +190,6 @@ public class LoginActivity extends AppCompatActivity {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d(TAG, "signInWithEmail:success");
 
-                        // Enable auto-login for next time
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putBoolean(KEY_AUTO_LOGIN, true);
                         editor.apply();
@@ -208,7 +206,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void signInWithGoogle() {
-        // Show interactive Google Sign-In
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         googleSignInLauncher.launch(signInIntent);
     }
@@ -222,12 +219,10 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
 
                     if (task.isSuccessful()) {
-                        // Sign in success, update UI with the signed-in user's information
                         Log.d(TAG, "signInWithCredential:success");
                         FirebaseUser user = mAuth.getCurrentUser();
                         Log.d(TAG, "Google sign in successful: " + user.getEmail());
 
-                        // Enable auto-login for next time
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putBoolean(KEY_AUTO_LOGIN, true);
                         editor.apply();

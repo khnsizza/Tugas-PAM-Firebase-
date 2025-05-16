@@ -83,7 +83,6 @@ public class AddContactActivity extends AppCompatActivity implements FirebaseDat
 
     @Override
     public void onContactsLoaded(List<ContactEntity> contacts) {
-        // unused
     }
 
     @Override
@@ -96,12 +95,10 @@ public class AddContactActivity extends AppCompatActivity implements FirebaseDat
 
     @Override
     public void onContactUpdated(ContactEntity contact) {
-        // unused
     }
 
     @Override
     public void onContactDeleted(String deletedFirebaseKey) {
-        // unused
     }
 
     @Override

@@ -54,7 +54,6 @@ public class RegisterActivity extends AppCompatActivity {
         String password = etPassword.getText().toString();
         String confirmPassword = etConfirmPassword.getText().toString();
 
-        // Validate inputs
         if (fullName.isEmpty()) {
             etFullName.setError("Full name is required");
             etFullName.requestFocus();
@@ -91,17 +90,13 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        // Disable register button while processing
         btnRegister.setEnabled(false);
 
-        // Register user with Firebase
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
-                    // Re-enable register button
                     btnRegister.setEnabled(true);
 
                     if (task.isSuccessful()) {
-                        // Registration success
                         Log.d(TAG, "createUserWithEmail:success");
                         FirebaseUser user = mAuth.getCurrentUser();
 
@@ -109,16 +104,13 @@ public class RegisterActivity extends AppCompatActivity {
                                 "Registration successful!",
                                 Toast.LENGTH_SHORT).show();
 
-                        // Navigate to ContactActivity
                         Intent intent = new Intent(RegisterActivity.this, ContactActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                         finish();
                     } else {
-                        // Registration failed
                         Log.w(TAG, "createUserWithEmail:failure", task.getException());
 
-                        // Handle specific errors
                         if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                             Toast.makeText(RegisterActivity.this,
                                     "Email already registered. Please use another email.",

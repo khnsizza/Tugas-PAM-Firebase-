@@ -71,7 +71,6 @@ public class DetailContactActivity extends AppCompatActivity implements Firebase
     }
 
 
-    // Override toolbar back button action
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
@@ -166,7 +165,6 @@ public class DetailContactActivity extends AppCompatActivity implements Firebase
         ContactEntity contact = new ContactEntity(name, phone, email, group, firebaseKey);
 
         if (firebaseKey == null) {
-            // Add new contact
             firebaseHandler.addContact(contact, new FirebaseDatabaseHandler.FirebaseCallbacks() {
                 @Override
                 public void onContactAdded(ContactEntity contact) {

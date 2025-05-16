@@ -37,7 +37,6 @@ public class ContactActivity extends AppCompatActivity implements FirebaseDataba
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Inisialisasi Toolbar
         Toolbar toolbar = findViewById(R.id.myToolbar);
         setSupportActionBar(toolbar);
 
@@ -79,7 +78,6 @@ public class ContactActivity extends AppCompatActivity implements FirebaseDataba
         }
     }
 
-    // Menambahkan menu ke toolbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -90,10 +88,8 @@ public class ContactActivity extends AppCompatActivity implements FirebaseDataba
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.logout) {
-            // Sign out dari Firebase
             mAuth.signOut();
 
-            // Sign out dari Google
             com.google.android.gms.auth.api.signin.GoogleSignInClient googleSignInClient =
                     com.google.android.gms.auth.api.signin.GoogleSignIn.getClient(this,
                             new com.google.android.gms.auth.api.signin.GoogleSignInOptions.Builder(
